@@ -1,0 +1,53 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Alchemist - Combined</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>📊 Data Alchemist</h1>
+
+  <section id="dataSection">
+    <h2>Upload Data Files</h2>
+    <label>Clients CSV/XLSX:</label>
+    <input type="file" id="clientInput" accept=".csv,.xlsx" /><br><br>
+    <div id="validationSummary" class="error"></div>
+    <div id="tablesContainer"></div>
+    <button onclick="exportClients()">📤 Export Cleaned Clients</button>
+  </section>
+
+  <hr>
+
+  <section id="ruleBuilder">
+    <h2>Rule Builder</h2>
+
+    <h3>Define Co-run Rule</h3>
+    <input type="text" id="coRunTasks" placeholder="e.g., T1,T3,T5" />
+    <button onclick="addCoRunRule()">Add Co-run Rule</button>
+
+    <h3>Slot Restriction</h3>
+    <input type="text" id="groupName" placeholder="e.g., WG1" />
+    <input type="number" id="minCommonSlots" value="2" />
+    <button onclick="addSlotRestrictionRule()">Add Slot Restriction</button>
+
+    <h3>Prioritization Weights</h3>
+    <label>Priority Weight:</label>
+    <input type="range" id="priorityWeight" min="0" max="10" value="5" />
+    <span id="priorityValue">5</span><br>
+    <label>Fulfillment Weight:</label>
+    <input type="range" id="fulfillmentWeight" min="0" max="10" value="5" />
+    <span id="fulfillmentValue">5</span>
+
+    <h3>Generated Rules</h3>
+    <pre id="rulesOutput"></pre>
+    <button onclick="downloadRules()">📥 Export Rules JSON</button>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
