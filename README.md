@@ -1,0 +1,7 @@
+The current implementation of the **Data Alchemist** project focuses on core functionality like file upload, data parsing, inline editing, validation, and export. It uses **PapaParse** for CSV files and **SheetJS (xlsx.js)** for Excel files. These libraries allow users to upload `.csv` or `.xlsx` files, display them as editable tables in the browser, perform basic validations (such as checking for duplicate IDs or missing columns), and export cleaned data back as Excel files.
+
+For AI, features like **natural language data queries**, **rule creation from text**, and **data correction suggestions** can be added using **OpenAI’s GPT API** or local NLP tools like **compromise.js**. These would enable users to interact with the data using plain English, making the app more user-friendly for non-technical users.
+
+For **data visualization**, libraries such as **Chart.js**, **D3.js**,**Recharts** can be used to create charts and graphs. These visualizations can display insights like task load per phase, worker availability, client priority distribution, and potential scheduling conflicts, helping users better understand and refine their data.
+
+In summary, the project currently uses HTML, JavaScript, PapaParse, and SheetJS for core functionality. AI and data visualization capabilities can be layered in using OpenAI APIs and charting libraries to make the tool smarter and more interactive.
